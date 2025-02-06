@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day for Fei Bao Bao Sexy Wife</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti"></script>
+    <style>
+        body {
+            background-color: #fce4ec;
+            font-family: 'Comic Sans MS', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+        }
+        .container {
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            background-color: #f06292;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin-top: 20px;
+        }
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        .message {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        .button {
+            padding: 15px 30px;
+            background-color: #fff;
+            color: #f06292;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .button:hover {
+            background-color: #fce4ec;
+        }
+        .cute-heart {
+            font-size: 48px;
+            margin-top: 20px;
+        }
+        .voucher {
+            background-color: #ff80ab;
+            padding: 30px;
+            margin-top: 50px;
+            border-radius: 10px;
+            font-size: 24px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: #fff;
+        }
+        .voucher h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        .voucher p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .voucher-button {
+            background-color: #fff;
+            color: #ff80ab;
+            padding: 12px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .voucher-button:hover {
+            background-color: #fce4ec;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fei Bao Bao 💖</h1>
+        <p class="message">I can't imagine spending Valentine's Day with anyone else, Fei Bao Bao. Will you be my Valentine?</p>
+        <button class="button" id="yesButton">Say Yes!</button>
+        <p class="cute-heart">💕</p>
+        <p class="message">Click below for something extra special: </p>
+        <a href="valentine.pdf" download>
+            <button class="button">Download a Sweet Surprise</button>
+        </a>
+    </div>
+
+    <!-- Infinite Kisses Voucher Section -->
+    <div class="voucher" id="voucherSection" style="display: none;">
+        <h2>Infinite Kisses Voucher</h2>
+        <p>This voucher entitles the holder to an infinite supply of kisses from me, now and forever! 😘</p>
+        <button class="voucher-button" onclick="alert('You just received an infinite supply of kisses! 😘')">Claim Your Kisses</button>
+    </div>
+
+    <script>
+        // Function to trigger confetti and show voucher when "Say Yes!" button is clicked
+        document.getElementById('yesButton').addEventListener('click', function() {
+            // Trigger confetti
+            confetti({
+                particleCount: 200,
+                spread: 90,
+                origin: { x: 0.5, y: 0.5 }
+            });
+
+            // Change the button text to something more romantic after the confetti
+            this.innerHTML = 'You made my day!';
+            this.style.backgroundColor = '#ff80ab';
+            this.style.color = '#fff';
+
+            // Show the infinite kisses voucher section
+            document.getElementById('voucherSection').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
