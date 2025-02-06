@@ -3,125 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Day for Fei Bao Bao Sexy Wife</title>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti"></script>
+    <title>Valentine's Day Surprise for Fei Bao Bao</title>
     <style>
         body {
-            background-color: #fce4ec;
-            font-family: 'Comic Sans MS', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
-            margin: 0;
-            color: #fff;
-        }
-        .container {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ff6a00, #ffcc00);
+            color: white;
             text-align: center;
-            padding: 30px;
-            border-radius: 15px;
-            background-color: #f06292;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            margin-top: 20px;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
         }
+
         h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: #fff;
+            font-size: 3em;
+            margin-top: 50px;
         }
-        .message {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-        .button {
-            padding: 15px 30px;
-            background-color: #fff;
-            color: #f06292;
-            font-size: 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s ease;
-        }
-        .button:hover {
-            background-color: #fce4ec;
-        }
-        .cute-heart {
-            font-size: 48px;
+
+        h2 {
+            font-size: 2em;
+            color: #ff66b2;
             margin-top: 20px;
         }
+
+        .heart-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.imgur.com/OpZfKlV.png') no-repeat center center fixed;
+            background-size: cover;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+
         .voucher {
-            background-color: #ff80ab;
-            padding: 30px;
-            margin-top: 50px;
+            background-color: #ff66b2;
+            color: white;
+            font-size: 1.5em;
+            padding: 20px;
             border-radius: 10px;
-            font-size: 24px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            color: #fff;
+            margin-top: 30px;
+            transition: transform 0.3s ease;
         }
-        .voucher h2 {
-            font-size: 36px;
-            margin-bottom: 15px;
+
+        .voucher:hover {
+            transform: scale(1.1);
         }
-        .voucher p {
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-        .voucher-button {
-            background-color: #fff;
-            color: #ff80ab;
-            padding: 12px 20px;
-            font-size: 18px;
+
+        .btn {
+            background-color: #ff99cc;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: 0.3s ease;
+            transition: background-color 0.3s ease;
+            margin: 10px;
         }
-        .voucher-button:hover {
-            background-color: #fce4ec;
+
+        .btn:hover {
+            background-color: #ff66b2;
+        }
+
+        .confetti {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            z-index: 10;
+            pointer-events: none;
+            opacity: 0;
+            animation: confetti 2s forwards;
+        }
+
+        @keyframes confetti {
+            0% { opacity: 1; transform: rotate(0deg) translate(0, 0); }
+            100% { opacity: 0; transform: rotate(720deg) translate(100px, 100px); }
+        }
+
+        .pdf-link {
+            font-size: 1.2em;
+            color: #ff99cc;
+            text-decoration: none;
+            display: block;
+            margin-top: 20px;
+            transition: color 0.3s;
+        }
+
+        .pdf-link:hover {
+            color: #ff66b2;
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 1.2em;
         }
     </style>
 </head>
 <body>
+
+    <div class="heart-background"></div>
+
     <div class="container">
         <h1>Fei Bao Bao 💖</h1>
-        <p class="message">I can't imagine spending Valentine's Day with anyone else, Fei Bao Bao. Will you be my Valentine?</p>
-        <button class="button" id="yesButton">Say Yes!</button>
-        <p class="cute-heart">💕</p>
-        <p class="message">Click below for something extra special: </p>
-        <a href="valentine.pdf" download>
-            <button class="button">Download a Sweet Surprise</button>
-        </a>
+        <h2>I have a big question for you...</h2>
+
+        <p style="font-size: 1.2em;">Will you be my Valentine? 💌</p>
+
+        <div class="voucher">
+            <p>Voucher: Infinite Kisses 💋</p>
+            <p>Redeemable at any time, with no expiration!</p>
+        </div>
+
+        <div style="margin-top: 40px;">
+            <button class="btn" onclick="showConfetti()">Yes, I'd Love To!</button>
+            <button class="btn" onclick="alert('I guess we can stay friends, haha!')">No, sorry!</button>
+        </div>
+
+        <a href="valentine.pdf" class="pdf-link" target="_blank">Click here for mystery! 📄</a>
     </div>
 
-    <!-- Infinite Kisses Voucher Section -->
-    <div class="voucher" id="voucherSection" style="display: none;">
-        <h2>Infinite Kisses Voucher</h2>
-        <p>This voucher entitles the holder to an infinite supply of kisses from me, now and forever! 😘</p>
-        <button class="voucher-button" onclick="alert('You just received an infinite supply of kisses! 😘')">Claim Your Kisses</button>
+    <div class="footer">
+        <p>Created with love by your secret admirer ❤️</p>
     </div>
 
     <script>
-        // Function to trigger confetti and show voucher when "Say Yes!" button is clicked
-        document.getElementById('yesButton').addEventListener('click', function() {
-            // Trigger confetti
-            confetti({
-                particleCount: 200,
-                spread: 90,
-                origin: { x: 0.5, y: 0.5 }
-            });
+        function showConfetti() {
+            let confettiContainer = document.createElement("div");
+            confettiContainer.classList.add("confetti");
 
-            // Change the button text to something more romantic after the confetti
-            this.innerHTML = 'You made my day!';
-            this.style.backgroundColor = '#ff80ab';
-            this.style.color = '#fff';
+            for (let i = 0; i < 50; i++) {
+                let confettiPiece = document.createElement("div");
+                confettiPiece.style.position = "absolute";
+                confettiPiece.style.width = "10px";
+                confettiPiece.style.height = "10px";
+                confettiPiece.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                confettiPiece.style.animation = `confetti 3s forwards ${Math.random() * 0.5}s`;
+                confettiContainer.appendChild(confettiPiece);
+            }
 
-            // Show the infinite kisses voucher section
-            document.getElementById('voucherSection').style.display = 'block';
-        });
+            document.body.appendChild(confettiContainer);
+
+            setTimeout(() => {
+                confettiContainer.style.opacity = "1";
+            }, 10);
+        }
     </script>
+
 </body>
 </html>
